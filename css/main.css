@@ -1,0 +1,34 @@
+.grayscale {
+  -webkit-filter: grayscale(1);
+}
+
+.sepia {
+  -webkit-filter: sepia(1);
+}
+
+.rotated-hue {
+  -webkit-filter: hue-rotate(180deg);
+}
+
+.inverted {
+  -webkit-filter: invert(1);
+}
+
+.call-buttons {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 400px;
+}
+
+.hidden {
+  display: none;
+}
+
+.left-buttons {
+  float: left;
+}
+
+.right-buttons {
+  float: right;
+}

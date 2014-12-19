@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+    <title>WebRTC codelab: step 6</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body>
+    <div id='room-name'></div>
+
+    <div id="videos">
+      <video id="local-video" autoplay muted></video>
+      <video id="remote-video" autoplay></video>
+    </div>
+
+    <div>
+      <div class='left-buttons'>
+        <button onclick="toggleLocalFilter('grayscale')">Toggle Grayscale</button>
+        <button onclick="toggleLocalFilter('sepia')">Toggle Sepia</button>
+        <button onclick="toggleLocalFilter('rotated-hue')">Rotate Hue</button>
+        <button onclick="toggleLocalFilter('inverted')">Invert</button>
+      </div>
+
+      <div class='right-buttons hidden'>
+        <button onclick="toggleRemoteFilter('grayscale')">Toggle Grayscale</button>
+        <button onclick="toggleRemoteFilter('sepia')">Toggle Sepia</button>
+        <button onclick="toggleRemoteFilter('rotated-hue')">Rotate Hue</button>
+        <button onclick="toggleRemoteFilter('inverted')">Invert</button>
+      </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/lib/adapter.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/filters.js"></script>
+
+  </body>
+</html>
