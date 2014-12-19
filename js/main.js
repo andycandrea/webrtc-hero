@@ -5,6 +5,9 @@ var isInitiator = false;
 var isStarted = false;
 var localStream, pc, remoteStream, turnReady;
 
+var $outgoingText = $('.outgoing').first();
+var $incomingText = $('.incoming').first();
+
 var pcConfig = {
   'iceServers': [{
     'url': 'stun:stun.l.google.com:19302'
@@ -82,6 +85,8 @@ socket.on('message', function(message) {
     pc.addIceCandidate(candidate);
   } else if (message === 'bye' && isStarted) {
     handleRemoteHangup();
+  } else if (message.type === 'text message') {
+    handleIncomingText(message.body);
   }
 });
 
@@ -216,6 +221,18 @@ function requestTurn(turnURL) {
   }
 }
 
+function sendText() {
+  var messageBody = $outgoingText.val();
+
+  var message = { 'type': 'text message', 'body': messageBody };
+  $incomingText.append('<div>' + messageBody + '</div>');
+  sendMessage(message);
+}
+
+function handleIncomingText(message) {
+  $incomingText.append('<div>' + message + '</div>');
+}
+
 function handleRemoteStreamAdded(event) {
   console.log('Remote stream added.');
   remoteVideo.src = window.URL.createObjectURL(event.stream);
@@ -242,6 +259,8 @@ function handleRemoteHangup() {
   isInitiator = true;
   $('#remote-video').addClass('hidden');
   $('.right-buttons').addClass('hidden');
+  $('.textbox').addClass('hidden');
+  $('.send-text').addClass('hidden');
 }
 
 function stop() {

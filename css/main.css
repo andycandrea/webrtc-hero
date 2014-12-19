@@ -13,6 +13,8 @@
   display: none;
 }
 
+.incoming {
+  height: 240px;
 }
 
 .inverted {
@@ -21,6 +23,10 @@
 
 .left-buttons {
   float: left;
+}
+
+.outgoing {
+  height: 120px;
 }
 
 .right-buttons {
@@ -33,4 +39,11 @@
 
 .sepia {
   -webkit-filter: sepia(1);
+}
+
+.textbox {
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: scroll;
+  word-wrap: break-word;
 }
