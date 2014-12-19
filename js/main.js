@@ -3,10 +3,7 @@
 var isChannelReady = false;
 var isInitiator = false;
 var isStarted = false;
-var localStream;
-var pc;
-var remoteStream;
-var turnReady;
+var localStream, pc, remoteStream, turnReady;
 
 var pcConfig = {
   'iceServers': [{
@@ -168,14 +165,6 @@ function handleIceCandidate(event) {
   }
 }
 
-function handleRemoteStreamAdded(event) {
-  console.log('Remote stream added.');
-  remoteVideo.src = window.URL.createObjectURL(event.stream);
-  remoteVideo.removeClass('hidden');
-  remoteStream = event.stream;
-  $('.right-buttons').removeClass('hidden');
-}
-
 function handleCreateOfferError(event) {
   console.log('createOffer() error: ', event);
 }
@@ -230,9 +219,11 @@ function requestTurn(turnURL) {
 function handleRemoteStreamAdded(event) {
   console.log('Remote stream added.');
   remoteVideo.src = window.URL.createObjectURL(event.stream);
-  $('#remote-video').removeClass('hidden');
   remoteStream = event.stream;
+  $('#remote-video').removeClass('hidden');
   $('.right-buttons').removeClass('hidden');
+  $('.textbox').removeClass('hidden');
+  $('.send-text').removeClass('hidden');
 }
 
 function handleRemoteStreamRemoved(event) {
@@ -249,8 +240,8 @@ function handleRemoteHangup() {
   console.log('Session terminated.');
   stop();
   isInitiator = true;
-  $('.right-buttons').addClass('hidden');
   $('#remote-video').addClass('hidden');
+  $('.right-buttons').addClass('hidden');
 }
 
 function stop() {
