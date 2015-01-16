@@ -60,10 +60,20 @@
           <button class='btn btn-default' onclick="toggleRemoteFilter('saturate')">Saturate</button>
         </div>
       </div>
+    </div>
 
-      <div class='textbox incoming hidden'></div>
-      <textarea class='textbox outgoing hidden'></textarea>
-      <button class='send-text hidden' onclick='sendText()'>Send</button>
+    <div class='container'>
+      <div id='textchat' class='hidden'>
+        <div class='textbox incoming'>
+          <ul class='text-history'></ul>
+        </div>
+        <form role='form'>
+          <div class='form-group'>
+            <textarea class='form-control textbox outgoing' rows='1' placeholder='Type a message'></textarea>
+          </div>
+          <div class='btn btn-default send-text' onclick='sendText()'>Send</button>
+        </form>
+      </div>
     </div>
 
     <script src='//code.jquery.com/jquery.min.js'></script>

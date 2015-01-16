@@ -33,6 +33,10 @@ button.btn.btn-default {
   flex-grow: 1;
 }
 
+.form-group {
+  margin-bottom: 0px;
+}
+
 .grayscale {
   -webkit-filter: grayscale(1);
 }
@@ -42,7 +46,7 @@ button.btn.btn-default {
 }
 
 .incoming {
-  height: 240px;
+  height: 160px;
 }
 
 .inverted {
@@ -66,10 +70,6 @@ button.btn.btn-default {
   background-color: darkorange;
 }
 
-.outgoing {
-  height: 120px;
-}
-
 #remote {
   float: right;
 }
@@ -90,14 +90,30 @@ button.btn.btn-default {
   -webkit-filter: saturate(10);
 }
 
+.send-text {
+  width: 100%;
+}
+
 .sepia {
   -webkit-filter: sepia(1);
 }
 
 .textbox {
-  margin-left: 10%;
-  margin-right: 10%;
   overflow: scroll;
+  resize: none;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+#textchat {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 100%;
+  margin-top: .25em;
+}
+
+.text-history > li {
+  font-size: 18px;
   word-wrap: break-word;
 }
 
