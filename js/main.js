@@ -42,7 +42,7 @@ socket.on('full', function(room) {
   console.log('Room ' + room + ' is full');
 });
 
-socket.on('join', function (room){
+socket.on('join', function (room) {
   console.log('Another peer made a request to join room ' + room);
   console.log('This peer is the initiator of room ' + room + '!');
   isChannelReady = true;
@@ -288,7 +288,6 @@ function preferOpus(sdp) {
   console.log('mlineindex2: ' + mLineIndex);
   console.log(mLineIndex == null);
   if (mLineIndex == null) {
-    console.log('in here!!!');
     return sdp;
   }
 
