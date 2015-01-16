@@ -15,6 +15,20 @@ a.navbar-brand.room-nav {
   width: 400px;
 }
 
+.filter-buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+  width: 100%;
+}
+
+.filter-buttons > button {
+  color: firebrick;
+  flex-grow: 1;
+  font-family: 'Lobster', cursive;
+  font-size: 16px;
+}
+
 .grayscale {
   -webkit-filter: grayscale(1);
 }
@@ -31,7 +45,12 @@ a.navbar-brand.room-nav {
   -webkit-filter: invert(1);
 }
 
-.local-buttons {
+#local, #remote {
+  margin-top: 4.5em;
+  width: 49%;
+}
+
+#local {
   float: left;
 }
 
@@ -47,7 +66,7 @@ a.navbar-brand.room-nav {
   height: 120px;
 }
 
-.remote-buttons {
+#remote {
   float: right;
 }
 
@@ -79,11 +98,5 @@ a.navbar-brand.room-nav {
 }
 
 video {
-  width: 48%;
-}
-
-#videos {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5em;
+  width: 100%;
 }

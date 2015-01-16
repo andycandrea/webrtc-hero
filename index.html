@@ -37,13 +37,9 @@
     </nav>
 
     <div class='container'>
-      <div id='videos'>
+      <div id='local'>
         <video id='local-video' autoplay muted></video>
-        <video id='remote-video' autoplay></video>
-      </div>
-
-      <div>
-        <div class='local-buttons hidden'>
+        <div class='local-buttons filter-buttons hidden'>
           <button class='btn btn-default' onclick="toggleLocalFilter('grayscale')">Grayscale</button>
           <button class='btn btn-default' onclick="toggleLocalFilter('sepia')">Sepia</button>
           <button class='btn btn-default' onclick="toggleLocalFilter('blur')">Blur</button>
@@ -51,8 +47,11 @@
           <button class='btn btn-default' onclick="toggleLocalFilter('inverted')">Invert</button>
           <button class='btn btn-default' onclick="toggleLocalFilter('saturate')">Saturate</button>
         </div>
+      </div>
 
-        <div class='remote-buttons hidden'>
+      <div id='remote'>
+        <video id='remote-video' autoplay></video>
+        <div class='remote-buttons filter-buttons hidden'>
           <button class='btn btn-default' onclick="toggleRemoteFilter('grayscale')">Grayscale</button>
           <button class='btn btn-default' onclick="toggleRemoteFilter('sepia')">Sepia</button>
           <button class='btn btn-default' onclick="toggleRemoteFilter('blur')">Blur</button>
