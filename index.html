@@ -22,10 +22,6 @@
           <a class="navbar-brand room-nav" href="/">WebRTC Hero</a>
         </div>
 
-    <div id='videos'>
-      <video id='local-video' autoplay muted></video>
-      <video id='remote-video' autoplay></video>
-    </div>
         <div id="navbar" class="navbar-collapse collapse">
           <div class="col-sm-3 col-md-3 pull-right">
             <form class="navbar-form">
@@ -41,29 +37,36 @@
       </div>
     </nav>
 
-    <div>
-      <div class='local-buttons'>
-        <button onclick="toggleLocalFilter('grayscale')">Toggle Grayscale</button>
-        <button onclick="toggleLocalFilter('sepia')">Toggle Sepia</button>
-        <button onclick="toggleLocalFilter('blur')">Toggle Blur</button>
-        <button onclick="toggleLocalFilter('rotated-hue')">Rotate Hue</button>
-        <button onclick="toggleLocalFilter('inverted')">Invert</button>
-        <button onclick="toggleLocalFilter('saturate')">Saturate</button>
+    <div class='container'>
+      <div id='videos'>
+        <video id='local-video' autoplay muted></video>
+        <video id='remote-video' autoplay></video>
       </div>
 
-      <div class='remote-buttons hidden'>
-        <button onclick="toggleRemoteFilter('grayscale')">Toggle Grayscale</button>
-        <button onclick="toggleRemoteFilter('sepia')">Toggle Sepia</button>
-        <button onclick="toggleRemoteFilter('blur')">Toggle Blur</button>
-        <button onclick="toggleRemoteFilter('rotated-hue')">Rotate Hue</button>
-        <button onclick="toggleRemoteFilter('inverted')">Invert</button>
-        <button onclick="toggleRemoteFilter('saturate')">Saturate</button>
+      <div>
+        <div class='local-buttons hidden'>
+          <button class='btn btn-default' onclick="toggleLocalFilter('grayscale')">Grayscale</button>
+          <button class='btn btn-default' onclick="toggleLocalFilter('sepia')">Sepia</button>
+          <button class='btn btn-default' onclick="toggleLocalFilter('blur')">Blur</button>
+          <button class='btn btn-default' onclick="toggleLocalFilter('rotated-hue')">Rotate Hue</button>
+          <button class='btn btn-default' onclick="toggleLocalFilter('inverted')">Invert</button>
+          <button class='btn btn-default' onclick="toggleLocalFilter('saturate')">Saturate</button>
+        </div>
+
+        <div class='remote-buttons hidden'>
+          <button class='btn btn-default' onclick="toggleRemoteFilter('grayscale')">Grayscale</button>
+          <button class='btn btn-default' onclick="toggleRemoteFilter('sepia')">Sepia</button>
+          <button class='btn btn-default' onclick="toggleRemoteFilter('blur')">Blur</button>
+          <button class='btn btn-default' onclick="toggleRemoteFilter('rotated-hue')">Rotate Hue</button>
+          <button class='btn btn-default' onclick="toggleRemoteFilter('inverted')">Invert</button>
+          <button class='btn btn-default' onclick="toggleRemoteFilter('saturate')">Saturate</button>
+        </div>
       </div>
+
+      <div class='textbox incoming hidden'></div>
+      <textarea class='textbox outgoing hidden'></textarea>
+      <button class='send-text hidden' onclick='sendText()'>Send</button>
     </div>
-
-    <div class='textbox incoming hidden'></div>
-    <textarea class='textbox outgoing hidden'></textarea>
-    <button class='send-text hidden' onclick='sendText()'>Send</button>
 
     <script src='//code.jquery.com/jquery.min.js'></script>
     <script src='bootstrap/js/bootstrap.min.js'></script>
