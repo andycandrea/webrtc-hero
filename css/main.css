@@ -1,7 +1,14 @@
-a.navbar-brand.room-nav {
+a.navbar-brand.room-nav, .btn.btn-default {
   color: firebrick;
-  font-family: 'Lobster', cursive;
+  font-family: 'Lobster';
+}
+
+a.navbar-brand.room-nav {
   font-size: 28px;
+}
+
+button.btn.btn-default {
+  font-size: 16px;
 }
 
 .blur {
@@ -23,10 +30,7 @@ a.navbar-brand.room-nav {
 }
 
 .filter-buttons > button {
-  color: firebrick;
   flex-grow: 1;
-  font-family: 'Lobster', cursive;
-  font-size: 16px;
 }
 
 .grayscale {
