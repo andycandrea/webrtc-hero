@@ -25,7 +25,7 @@
   -webkit-filter: invert(1);
 }
 
-.left-buttons {
+.local-buttons {
   float: left;
 }
 
@@ -33,7 +33,7 @@
   height: 120px;
 }
 
-.right-buttons {
+.remote-buttons {
   float: right;
 }
 
