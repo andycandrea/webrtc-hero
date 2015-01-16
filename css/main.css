@@ -35,6 +35,10 @@ a.navbar-brand.room-nav {
   float: left;
 }
 
+#local-video {
+  float: left;
+}
+
 .navbar {
   background-color: darkorange;
 }
@@ -44,6 +48,10 @@ a.navbar-brand.room-nav {
 }
 
 .remote-buttons {
+  float: right;
+}
+
+#remote-video {
   float: right;
 }
 
@@ -68,4 +76,14 @@ a.navbar-brand.room-nav {
   margin-right: 10%;
   overflow: scroll;
   word-wrap: break-word;
+}
+
+video {
+  width: 48%;
+}
+
+#videos {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
 }
