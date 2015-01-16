@@ -4,7 +4,6 @@ var isChannelReady = false;
 var isInitiator = false;
 var isStarted = false;
 var localStream, pc, remoteStream, turnReady;
-var socket;
 
 var $outgoingText = $('.outgoing').first();
 var $incomingText = $('.incoming').first();
@@ -27,7 +26,6 @@ var sdpConstraints = {
 var $roomButton = $('#join-room');
 
 $roomButton.on('click', function() {
-  console.log('here');
   window.room = $('#room-name').val();
 
   socket = io.connect();
@@ -241,6 +239,7 @@ $roomButton.on('click', function() {
     console.log('Remote stream added.');
     remoteVideo.src = window.URL.createObjectURL(event.stream);
     remoteStream = event.stream;
+
     $('#remote-video').removeClass('hidden');
     $('.remote-buttons').removeClass('hidden');
     $('.textbox').removeClass('hidden');
@@ -360,4 +359,4 @@ $roomButton.on('click', function() {
     sdpLines[mLineIndex] = mLineElements.join(' ');
     return sdpLines;
   }
-});
+};
