@@ -1,3 +1,9 @@
+a.navbar-brand.room-nav {
+  color: firebrick;
+  font-family: 'Lobster', cursive;
+  font-size: 28px;
+}
+
 .blur {
   -webkit-filter: blur(10px);
 }
@@ -29,12 +35,20 @@
   float: left;
 }
 
+.navbar {
+  background-color: darkorange;
+}
+
 .outgoing {
   height: 120px;
 }
 
 .remote-buttons {
   float: right;
+}
+
+.room-select {
+  margin-left: 10%;
 }
 
 .rotated-hue {
