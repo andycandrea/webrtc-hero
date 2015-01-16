@@ -1,16 +1,16 @@
 {
-  'name': 'webrtc-hero',
-  'version': '0.0.1',
-  'description': 'An experiment to replicate Screenhero with WebRTC',
-  'author': 'Andy Andrea <andy.andrea@scimedsolutions.com>',
-  'repository': {
-    'type': 'git',
-    'url': 'https://github.com/andycandrea/webrtc-hero'
+  "name": "webrtc-hero",
+  "version": "0.0.1",
+  "description": "An experiment to replicate Screenhero with WebRTC",
+  "author": "Andy Andrea <andy.andrea@scimedsolutions.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andycandrea/webrtc-hero"
   },
-  'dependencies': {
-    'node-static': '^0.7.6',
-    'socket.io': '^1.2.1',
-    'webrtc': '^1.12.0'
+  "dependencies": {
+    "node-static": "^0.7.6",
+    "socket.io": "^1.2.1",
+    "webrtc": "^1.12.0"
   },
-  'license': 'MIT'
+  "license": "MIT"
 }
