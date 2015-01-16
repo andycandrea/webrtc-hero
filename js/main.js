@@ -4,9 +4,10 @@ var isChannelReady = false;
 var isInitiator = false;
 var isStarted = false;
 var localStream, pc, remoteStream, turnReady;
+var peerConnection;
 
 var $outgoingText = $('.outgoing').first();
-var $incomingText = $('.incoming').first();
+var $textHistory = $('.text-history').first();
 
 var pcConfig = {
   'iceServers': [{
@@ -28,7 +29,15 @@ var $roomButton = $('#join-room');
 $roomButton.on('click', function() {
   window.room = $('#room-name').val();
 
-  socket = io.connect();
+  peerConnection = new PeerConnection(window.room);
+});
+
+function sendText() {
+  peerConnection.sendText();
+}
+
+function PeerConnection(room) {
+  var socket = io.connect();
 
   if (room !== '') {
     socket.emit('create or join', room);
@@ -223,8 +232,9 @@ $roomButton.on('click', function() {
     }
   }
 
-  function sendText() {
+  this.sendText = function() {
     var messageBody = $outgoingText.val();
+    $outgoingText.val('');
 
     var message = { 'type': 'text message', 'body': messageBody };
     $incomingText.append('<div>' + messageBody + '</div>');
@@ -242,8 +252,7 @@ $roomButton.on('click', function() {
 
     $('#remote-video').removeClass('hidden');
     $('.remote-buttons').removeClass('hidden');
-    $('.textbox').removeClass('hidden');
-    $('.send-text').removeClass('hidden');
+    $('#textchat').removeClass('hidden');
   }
 
   function handleRemoteStreamRemoved(event) {
@@ -262,8 +271,7 @@ $roomButton.on('click', function() {
     isInitiator = true;
     $('#remote-video').addClass('hidden');
     $('.remote-buttons').addClass('hidden');
-    $('.textbox').addClass('hidden');
-    $('.send-text').addClass('hidden');
+    $('#textchat').addClass('hidden');
   }
 
   function stop() {
