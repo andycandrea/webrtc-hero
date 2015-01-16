@@ -5,6 +5,8 @@ var isInitiator = false;
 var isStarted = false;
 var localStream, pc, remoteStream, turnReady;
 var peerConnection;
+var localAvatar;
+var remoteAvatar;
 
 var $outgoingText = $('.outgoing').first();
 var $textHistory = $('.text-history').first();
@@ -47,6 +49,8 @@ function PeerConnection(room) {
   socket.on('created', function(room) {
     console.log('Created room ' + room);
     isInitiator = true;
+    localAvatar = 'cap';
+    remoteAvatar = 'batman';
   });
 
   socket.on('full', function(room) {
@@ -96,8 +100,18 @@ function PeerConnection(room) {
       handleRemoteHangup();
     } else if (message.type === 'text message') {
       handleIncomingText(message.body);
+    } else if (message.type === 'avatar-assignment') {
+      localAvatar = localAvatar || message.avatar;
+      remoteAvatar = remoteAvatar || other(message.avatar);
     }
   });
+
+  function other(avatar) {
+    if (avatar === 'cap') {
+      return 'batman';
+    }
+    return 'cap';
+  };
 
   ////////////////////////////////////////////////////
 
@@ -237,12 +251,12 @@ function PeerConnection(room) {
     $outgoingText.val('');
 
     var message = { 'type': 'text message', 'body': messageBody };
-    $incomingText.append('<div>' + messageBody + '</div>');
+    $textHistory.append('<li class=message-' + localAvatar + '>' + messageBody + '</li>');
     sendMessage(message);
   }
 
   function handleIncomingText(message) {
-    $incomingText.append('<div>' + message + '</div>');
+    $textHistory.append('<li class=message-' + remoteAvatar + '>' + message + '</li>');
   }
 
   function handleRemoteStreamAdded(event) {
@@ -253,6 +267,9 @@ function PeerConnection(room) {
     $('#remote-video').removeClass('hidden');
     $('.remote-buttons').removeClass('hidden');
     $('#textchat').removeClass('hidden');
+
+    var avatarMessage = { 'type': 'avatar-assignment', 'avatar': remoteAvatar };
+    sendMessage(avatarMessage);
   }
 
   function handleRemoteStreamRemoved(event) {

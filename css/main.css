@@ -53,6 +53,14 @@ button.btn.btn-default {
   -webkit-filter: invert(1);
 }
 
+li.message-batman {
+  list-style-image: url(/images/kameleon/Batman-small.svg);
+}
+
+li.message-cap {
+  list-style-image: url(/images/kameleon/Captain-Shield-small.svg);
+}
+
 #local, #remote {
   margin-top: 4.5em;
   width: 49%;
