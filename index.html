@@ -38,7 +38,10 @@
 
     <div class='container'>
       <div id='local'>
-        <video id='local-video' autoplay muted></video>
+        <div class='video-container'>
+          <div id='local-avatar'></div>
+          <video id='local-video' autoplay muted></video>
+        </div>
         <div class='local-buttons filter-buttons hidden'>
           <button class='btn btn-default' onclick="toggleLocalFilter('grayscale')">Grayscale</button>
           <button class='btn btn-default' onclick="toggleLocalFilter('sepia')">Sepia</button>
@@ -50,7 +53,10 @@
       </div>
 
       <div id='remote'>
-        <video id='remote-video' autoplay></video>
+        <div class='video-container'>
+          <div id='remote-avatar'></div>
+          <video id='remote-video' autoplay></video>
+        </div>
         <div class='remote-buttons filter-buttons hidden'>
           <button class='btn btn-default' onclick="toggleRemoteFilter('grayscale')">Grayscale</button>
           <button class='btn btn-default' onclick="toggleRemoteFilter('sepia')">Sepia</button>

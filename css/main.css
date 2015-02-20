@@ -7,6 +7,14 @@ a.navbar-brand.room-nav {
   font-size: 28px;
 }
 
+.avatar-batman {
+  background: url(/images/kameleon/Batman.svg);
+}
+
+.avatar-cap {
+  background: url(/images/kameleon/Captain-Shield.svg);
+}
+
 button.btn.btn-default {
   font-size: 16px;
 }
@@ -54,10 +62,12 @@ button.btn.btn-default {
 }
 
 li.message-batman {
+  background-color: #81D2EB;
   list-style-image: url(/images/kameleon/Batman-small.svg);
 }
 
 li.message-cap {
+  background-color: #FABBAF;
   list-style-image: url(/images/kameleon/Captain-Shield-small.svg);
 }
 
@@ -68,6 +78,14 @@ li.message-cap {
 
 #local {
   float: left;
+}
+
+#local-avatar, #remote-avatar {
+  display: inherit;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+  z-index: 100;
 }
 
 #local-video {
@@ -127,4 +145,8 @@ li.message-cap {
 
 video {
   width: 100%;
+}
+
+.video-container {
+  position: relative;
 }

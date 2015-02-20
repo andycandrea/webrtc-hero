@@ -51,6 +51,9 @@ function PeerConnection(room) {
     isInitiator = true;
     localAvatar = 'cap';
     remoteAvatar = 'batman';
+
+    $('#local-avatar').addClass('avatar-' + localAvatar);
+    $('#remote-avatar').addClass('avatar-' + remoteAvatar);
   });
 
   socket.on('full', function(room) {
@@ -103,6 +106,9 @@ function PeerConnection(room) {
     } else if (message.type === 'avatar-assignment') {
       localAvatar = localAvatar || message.avatar;
       remoteAvatar = remoteAvatar || other(message.avatar);
+
+      $('#local-avatar').addClass('avatar-cap');
+      $('#remote-avatar').addClass('avatar-batman');
     }
   });
 
@@ -248,7 +254,7 @@ function PeerConnection(room) {
 
   this.sendText = function() {
     var messageBody = $outgoingText.val();
-    $outgoingText.val('');
+    $outgoingText.value = '';
 
     var message = { 'type': 'text message', 'body': messageBody };
     $textHistory.append('<li class=message-' + localAvatar + '>' + messageBody + '</li>');
