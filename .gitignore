@@ -1,1 +1,3 @@
 node_modules
+*.sw[nop]
+.DS_Store
