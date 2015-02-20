@@ -258,11 +258,13 @@ function PeerConnection(room) {
 
     var message = { 'type': 'text message', 'body': messageBody };
     $textHistory.append('<li class=message-' + localAvatar + '>' + messageBody + '</li>');
+    $textHistory.parent().scrollTop($textHistory[0].scrollHeight);
     sendMessage(message);
   }
 
   function handleIncomingText(message) {
     $textHistory.append('<li class=message-' + remoteAvatar + '>' + message + '</li>');
+    $textHistory.parent().scrollTop($textHistory[0].scrollHeight);
   }
 
   function handleRemoteStreamAdded(event) {
