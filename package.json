@@ -1,7 +1,7 @@
 {
   "name": "webrtc-hero",
   "version": "0.0.1",
-  "description": "An experiment to replicate Screenhero with WebRTC",
+  "description": "An experiment with WebRTC",
   "author": "Andy Andrea <andy.andrea@scimedsolutions.com>",
   "repository": {
     "type": "git",
