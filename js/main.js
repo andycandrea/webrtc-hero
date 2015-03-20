@@ -107,8 +107,8 @@ function PeerConnection(room) {
       localAvatar = localAvatar || message.avatar;
       remoteAvatar = remoteAvatar || other(message.avatar);
 
-      $('#local-avatar').addClass('avatar-cap');
-      $('#remote-avatar').addClass('avatar-batman');
+      $('#local-avatar').addClass('avatar-' + localAvatar);
+      $('#remote-avatar').addClass('avatar-' + remoteAvatar);
     }
   });
 
