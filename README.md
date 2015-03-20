@@ -1,8 +1,10 @@
 # WebRTC Hero
 
 This repository contains an experiment using NodeJS to determine how much functionality from
-tools like Screenhero and HipChat can be reproduced in-browser using WebRTC. Demo site will be
-available soon.
+tools like Screenhero and HipChat can be reproduced in-browser using WebRTC. At
+the moment, WebRTC Hero is little more than a basic WebRTC chat app.
+
+Check out the demo site [here](https://webrtc-hero.herokuapp.com/)
 
 ## Usage
 
