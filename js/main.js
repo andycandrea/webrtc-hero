@@ -273,6 +273,7 @@ function PeerConnection(room) {
     remoteStream = event.stream;
 
     $('#remote-video').removeClass('hidden');
+    $('#remote-avatar').removeClass('hidden');
     $('.remote-buttons').removeClass('hidden');
     $('#textchat').removeClass('hidden');
 
@@ -295,6 +296,7 @@ function PeerConnection(room) {
     stop();
     isInitiator = true;
     $('#remote-video').addClass('hidden');
+    $('#remote-avatar').addClass('hidden');
     $('.remote-buttons').addClass('hidden');
     $('#textchat').addClass('hidden');
   }
