@@ -1,0 +1,42 @@
+.blur {
+  -webkit-filter: blur(10px);
+}
+
+button.btn.btn-default {
+  font-size: 16px;
+}
+
+.filter-buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+  width: 100%;
+}
+
+.filter-buttons > button {
+  flex-grow: 1;
+}
+
+.form-group {
+  margin-bottom: 0px;
+}
+
+.grayscale {
+  -webkit-filter: grayscale(1);
+}
+
+.inverted {
+  -webkit-filter: invert(1);
+}
+
+.rotated-hue {
+  -webkit-filter: hue-rotate(180deg);
+}
+
+.saturate {
+  -webkit-filter: saturate(10);
+}
+
+.sepia {
+  -webkit-filter: sepia(1);
+}

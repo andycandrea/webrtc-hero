@@ -1,0 +1,42 @@
+.form-group {
+  margin-bottom: 0px;
+}
+
+li.message-batman, li.message-cap {
+  padding-left: 4px;
+  padding-top: 4px;
+  vertical-align: top;
+}
+
+li.message-batman {
+  background-color: #A5EAFF;
+  list-style-image: url(/images/kameleon/Batman-small.svg);
+}
+
+li.message-cap {
+  background-color: #FFD4CC;
+  list-style-image: url(/images/kameleon/Captain-Shield-small.svg);
+}
+
+.send-text {
+  width: 100%;
+}
+
+.textbox {
+  overflow: scroll;
+  resize: none;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+#textchat {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 100%;
+  margin-top: .25em;
+}
+
+.text-history > li {
+  font-size: 18px;
+  word-wrap: break-word;
+}

@@ -1,0 +1,16 @@
+a.navbar-brand.room-nav, .btn.btn-default {
+  color: firebrick;
+  font-family: 'Lobster';
+}
+
+a.navbar-brand.room-nav {
+  font-size: 28px;
+}
+
+.navbar {
+  background-color: darkorange;
+}
+
+.room-select {
+  margin-left: 10%;
+}

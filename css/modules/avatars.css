@@ -1,0 +1,15 @@
+.avatar-batman {
+  background: url(/images/kameleon/Batman.svg);
+}
+
+.avatar-cap {
+  background: url(/images/kameleon/Captain-Shield.svg);
+}
+
+#local-avatar, #remote-avatar {
+  display: inherit;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+  z-index: 100;
+}
