@@ -4,14 +4,29 @@ var os = require('os');
 var nodeStatic = require('node-static');
 var http = require('http');
 var socketIO = require('socket.io');
+var express = require('express');
+var path = require('path');
 
 var fileServer = new(nodeStatic.Server)();
 var port = process.env.PORT || 2014
-var app = http.createServer(function(req, res) {
-  fileServer.serve(req, res);
-}).listen(port);
+var app = express();
+app.engine('html', require('ejs').renderFile);
 
-var io = socketIO.listen(app);
+app.use(express.static(path.join(__dirname, 'public')));
+
+var server = app.listen(port, function () {
+  var host = server.address().address
+  var port = server.address().port
+})
+
+app.get('/:room', function(req, res) {
+  res.render('room.html');
+});
+app.get('/', function(req, res) {
+  res.send('index.html');
+});
+
+var io = socketIO.listen(server);
 io.sockets.on('connection', function(socket) {
 
   // convenience function to log server messages on the client
