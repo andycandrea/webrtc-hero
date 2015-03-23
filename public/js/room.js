@@ -29,10 +29,11 @@ var sdpConstraints = {
 var $roomButton = $('#join-room');
 
 $roomButton.on('click', function() {
-  window.room = $('#room-name').val();
-
-  peerConnection = new PeerConnection(window.room);
+  window.location.pathname = $('#room-name').val();
 });
+
+window.room = window.location.pathname.substring(1, window.location.pathname.length);
+peerConnection = new PeerConnection(window.room);
 
 function sendText() {
   peerConnection.sendText();
